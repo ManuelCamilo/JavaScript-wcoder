@@ -142,15 +142,18 @@ right: 17rem;
 
 /* card  para el carrito  */
 .imagenCarrito{
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
 }
 .cardCarrito{
     display: flex;
     gap: 3rem;
 }
 .parrafoCarrito{
-    font-size: 1rem;
+    font-size: 1.5rem;
+}
+.producto__carrito{
+    width: 20rem;
 }
 .productoCard{
     background-color: var(--primarioOscuro);
@@ -178,6 +181,7 @@ right: 17rem;
     position: relative;
     top: -0.5rem;
     left: 25rem;
+    border-radius: 15px;
 }
 /***** APOYOS IMG *******/
 

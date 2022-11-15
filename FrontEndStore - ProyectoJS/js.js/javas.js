@@ -87,12 +87,13 @@ const mostrarCarrito = () => {
         card.classList.add("cardCarrito");
         card.innerHTML = `
         <img class="imagenCarrito" src="${producto.img}" alt="camiseta ${producto.nombre}">
-                <div class="producto__informacion text-center">
-                    <p class="parrafo__carrito"> Camiseta ${producto.nombre} </p>
-                    <p class="parrafo__carrito"> x ${producto.cantidad} </p>
-                    <p class="parrafo__carrito"> ${producto.precio} </p>
-                        <button class="submit__carrito" id= "eliminar${producto.id}" > Eliminar del carrito </button>
+                <div class="producto__carrito text-center">
+                    <p class="parrafoCarrito"> Remera ${producto.nombre} </p>
+                    <p class="parrafoCarrito"> x ${producto.cantidad} u.</p>
+                    <p class="parrafoCarrito"> $ ${producto.precio} </p>
+                    
                 </div>
+                <button class="submit__carrito" id= "eliminar${producto.id}" > Eliminar del carrito </button>
         `
         contenedorCarrito.appendChild(card);
 

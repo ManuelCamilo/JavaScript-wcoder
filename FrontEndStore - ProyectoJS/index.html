@@ -22,7 +22,7 @@
         <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
         <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
         <div>    
-            <button id="verCarrito" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> 
+            <button id="verCarrito" class="btn btn-warning botonCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> 
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="48" height="48" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="6" cy="19" r="2" />
@@ -35,14 +35,12 @@
                 <div class="offcanvas-header">
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body carritoDeCompras" >
+                <div class="offcanvas-body " >
                     <!-- carrito de compras -->
                 <hr>
                 <h2>Carrito de Compras</h2>
-                <button id="vaciarCarrito">Vaciar carrito</button>
+                <button id="vaciarCarrito" class="botonVaciarCarro">Vaciar carrito</button>
                 <div id="contenedorCarrito" class="carritoContenedor">
-                
-
                 
                 </div>
                 <h3>Total a pagar :<span id="total"></span></h3>

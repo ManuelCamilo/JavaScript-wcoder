@@ -1,33 +1,16 @@
-class Producto {
-    constructor(id, nombre, tipo, precio, img,) {
-        this.id = id;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.precio = precio;
-        this.img = img;
-        this.cantidad = 1;
-    }
-}
-
-const VueJS = new Producto (1, "VueJS", "Remera", 2800, "img/1.jpg" );
-const AngularJS = new Producto (2, "AngularJS", "Remera", 3500, "img/2.jpg");
-const ReactJS = new Producto (3, "ReactJS", "Remera", 5000, "img/3.jpg");
-const Redux = new Producto (4, "Redux", "Remera", 2800, "img/4.jpg");
-const Nodejs = new Producto (5, "Node.js", "Remera", 4000, "img/5.jpg");
-const SASS = new Producto (6, "SASS", "Remera", 800, "img/6.jpg");
-const HTML5 = new Producto (7, "HTML5", "Remera", 700, "img/7.jpg");
-const GitHub = new Producto (8, "GitHub", "Remera", 1500, "img/8.jpg");
-const BulmaCSS = new Producto (9, "BulmaCSS", "Remera", 2500, "img/9.jpg");
-const TypeScript = new Producto (10, "TypeScript", "Remera", 2500, "img/10.jpg");
-const Drupal = new Producto (11, "Drupal", "Remera", 2500, "img/11.jpg");
-const JavaScript = new Producto (12, "JavaScript", "Remera", 5500, "img/12.jpg");
-const GraphQL = new Producto (13, "GraphQL", "Remera", 3300, "img/13.jpg");
-const WordPress = new Producto (14, "WordPress", "Remera", 2100, "img/14.jpg");
-
-
-const productos = [VueJS, AngularJS, ReactJS, Redux, Nodejs, SASS, HTML5, GitHub, BulmaCSS, TypeScript, Drupal, JavaScript, GraphQL, WordPress]
-
+let productos = []
 let carrito = []
+
+fetch(`json/productos.json`)
+    .then (respuesta => respuesta.json())
+    .then ((datos) => {
+        
+        datos.forEach((producto)=> {
+        productos.push(producto)
+               
+        })
+        mostrarProductos()
+    })
 
 if(localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
@@ -45,7 +28,7 @@ const mostrarProductos = () => {
                 <div class="producto__informacion">
                     <p class="producto__nombre"> ${producto.nombre} </p>
                     <p class="producto__precio"> $ ${producto.precio} </p>
-                        <button class="formulario__submit" id= "boton${producto.id}" > Agregar al carrito </button>
+                        <button class="formulario__submit botonAgregarCarrito" id= "boton${producto.id}" > Agregar al carrito </button>
                 </div>
         `
         contenedorProductos.appendChild(card);

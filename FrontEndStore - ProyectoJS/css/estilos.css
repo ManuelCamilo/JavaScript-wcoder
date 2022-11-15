@@ -98,6 +98,11 @@ h3{
 .navegacion__enlace:hover, .navegacion__enlace--activo {
     color: var(--secundario);
 }
+.botonCarrito{
+position: absolute;
+top: 16rem;
+right: 17rem;
+}
 
 /**** Grid ****/
 
@@ -160,8 +165,19 @@ h3{
     padding: 1rem;
     transition: background-color .3s ease;
 }
+/*
 .carritoDeCompras{
     height: 500rem;
+}
+*/
+.botonAgregarCarrito{
+    position: relative;
+    left: 9.5rem;
+}
+.botonVaciarCarro{
+    position: relative;
+    top: -0.5rem;
+    left: 25rem;
 }
 /***** APOYOS IMG *******/
 

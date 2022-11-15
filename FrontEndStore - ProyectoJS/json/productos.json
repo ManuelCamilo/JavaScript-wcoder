@@ -1,0 +1,16 @@
+[
+    {"nombre":"VueJS", "precio":2950 ,"id":1,"img":"img/1.jpg", "cantidad":1},
+    {"nombre":"AngularJS", "precio":3500,"id":2,"img":"img/2.jpg", "cantidad":1},
+    {"nombre":"ReactJS", "precio":4500,"id":3,"img":"img/3.jpg", "cantidad":1},
+    {"nombre":"Redux", "precio":2000,"id":4,"img":"img/4.jpg", "cantidad":1},
+    {"nombre":"Node.js", "precio":3400,"id":5,"img":"img/5.jpg", "cantidad":1},
+    {"nombre":"SASS", "precio":2500,"id":6,"img":"img/6.jpg", "cantidad":1},
+    {"nombre":"HTML5", "precio":1499,"id":7,"img":"img/7.jpg", "cantidad":1},
+    {"nombre":"GitHub", "precio":2100,"id":8,"img":"img/8.jpg", "cantidad":1},
+    {"nombre":"BulmaCSS", "precio":1000,"id":9,"img":"img/9.jpg", "cantidad":1},
+    {"nombre":"TypeScript", "precio":3999,"id":10,"img":"img/10.jpg", "cantidad":1},
+    {"nombre":"Drupal", "precio":3000,"id":11,"img":"img/11.jpg", "cantidad":1},
+    {"nombre":"JavaScript", "precio":3999,"id":12,"img":"img/12.jpg", "cantidad":1},
+    {"nombre":"GraphQL", "precio":2400,"id":13,"img":"img/13.jpg","cantidad":1},
+    {"nombre":"WordPress", "precio":3000,"id":14,"img":"img/14.jpg","cantidad":1}
+]

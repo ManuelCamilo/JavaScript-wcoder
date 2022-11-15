@@ -7,7 +7,6 @@ class Producto {
         this.img = img;
         this.cantidad = 1;
     }
-
 }
 
 const VueJS = new Producto (1, "VueJS", "Remera", 2800, "img/1.jpg" );
@@ -54,7 +53,18 @@ const mostrarProductos = () => {
         //agregar al carrito
         const boton = document.getElementById(`boton${producto.id}`);
         boton.addEventListener("click", () => {
-            agregarAlCarrito(producto.id)
+            agregarAlCarrito(producto.id);
+            Toastify({
+                text:"Producto agregado al carrito",
+                duration:1500,
+                gravity:"bottom",
+                position:"right",
+                style:{
+                    background:"green"
+                },
+                destination: "https://google.com",
+                newWindow:true,
+            }).showToast();
         })
     })
 }
@@ -107,6 +117,16 @@ const mostrarCarrito = () => {
         const boton = document.getElementById(`eliminar${producto.id}`);
         boton.addEventListener("click", () => {
             eliminarDelCarrito(producto.id);
+            Toastify({
+                text:"Producto eliminado del carrito",
+                duration:1500,
+                gravity:"bottom",
+                position:"right",
+                style:{
+                    background:"red"
+                },
+                newWindow:true,
+                }).showToast();
         })
     })
     calcularTotal();

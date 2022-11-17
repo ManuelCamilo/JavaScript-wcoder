@@ -28,7 +28,7 @@ const mostrarProductos = () => {
                 <div class="producto__informacion">
                     <p class="producto__nombre"> ${producto.nombre} </p>
                     <p class="producto__precio"> $ ${producto.precio} </p>
-                        <button class="formulario__submit botonAgregarCarrito" id= "boton${producto.id}" > Agregar al carrito </button>
+                        <button class="formulario__submit botonAgregarCarrito mx-auto" id= "boton${producto.id}" > Agregar al carrito </button>
                 </div>
         `
         contenedorProductos.appendChild(card);

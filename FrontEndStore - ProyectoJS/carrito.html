@@ -40,10 +40,17 @@
             
             <div class="total">
                 <h3 class="resumenDeCompra">Resumen de compra</h3>
-                <h3> Total a pagar es de: <span id="total"></span></h3>
+                <div class="d-flex justify-content-between mt-4 cuadroResumen">
+                    <p class="total__subtotal"> El total es de: </p> 
+                    <span id="total"> </span>
+                </div>
+                <div class="total__total d-flex justify-content-between">
+                    <button id="vaciarCarrito" class="botonVaciarCarroResumen btn btn-warning">Cancelar compra</button>
+                    <button id="pagar" class="btn btn-warning botonPagarCarro "> Ir al pago </button>
+                </div>
             </div>
         </section>
-        <button id="vaciarCarrito" class="botonVaciarCarroResumen btn btn-warning">Vaciar carrito</button>
+        
         
         
         <div class="contenedorResumen">

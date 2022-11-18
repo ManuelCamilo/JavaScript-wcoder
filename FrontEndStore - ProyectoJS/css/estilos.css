@@ -26,7 +26,7 @@ body{
     font-size:1.6rem;
     line-height:1.5;
 }
-p {
+p, span{
     font-size: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--blanco);
@@ -179,10 +179,10 @@ right: 17rem;
     border-radius: 5px;
 }
 .botonVaciarCarroResumen{
-    width: 25rem;
-    height: 7rem;
-    margin-top: 2rem;
-    margin-left: 8rem;
+    width: 10rem;
+    height: 4rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
 }
 .carritoContenedor{
     margin-top: 2rem;
@@ -190,7 +190,7 @@ right: 17rem;
 .tusProductos{
 width: 6rem;
 height: 5.4rem;
-margin-left: 55rem;
+margin-left: 56rem;
 }
 .compraResumen{
     display: flex;
@@ -203,7 +203,30 @@ margin-left: 55rem;
     border-radius: 3.5rem;
     margin-left: 29rem;
     margin-top: 2rem;
-    
+    display:grid;
+    grid-template-rows: repeat(3,1fr);
+}
+.resumenDeCompra{
+    grid-row: 1/2;
+    margin-right:24rem;
+    margin-top: 2rem;
+
+}
+.total__subtotal{
+    grid-row: 2/3;
+    margin-left: 4rem;
+}
+.total__total{
+    grid-row:3/4
+}
+.cuadroResumen{
+    margin-right: 4rem;
+}
+.botonPagarCarro{
+    width: 10rem;
+    height: 4rem;
+    margin-top: 1rem;
+    margin-right: 4rem;
 }
 /***** APOYOS IMG *******/
 

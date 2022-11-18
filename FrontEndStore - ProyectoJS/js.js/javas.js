@@ -25,15 +25,13 @@ const mostrarProductos = () => {
         card.classList.add("producto");
         card.innerHTML = `
         <img class="producto__imagen " src="${producto.img}" alt="camiseta ${producto.nombre}">
-                <div class="producto__informacion">
-                    <p class="producto__nombre"> ${producto.nombre} </p>
-                    <p class="producto__precio"> $ ${producto.precio} </p>
-                        <button class="formulario__submit botonAgregarCarrito mx-auto" id= "boton${producto.id}" > Agregar al carrito </button>
-                </div>
-        `
+            <div class="producto__informacion">
+                <p class="producto__nombre"> ${producto.nombre} </p>
+                <p class="producto__precio"> $ ${producto.precio} </p>
+                <button class="formulario__submit botonAgregarCarrito mx-auto" id= "boton${producto.id}" > Agregar al carrito </button>
+            </div>`
         contenedorProductos.appendChild(card);
 
-        //agregar al carrito
         const boton = document.getElementById(`boton${producto.id}`);
         boton.addEventListener("click", () => {
             agregarAlCarrito(producto.id);
@@ -45,14 +43,14 @@ const mostrarProductos = () => {
                 style:{
                     background:"green"
                 },
-                destination: "https://google.com",
+                destination: "./carrito.html",
                 newWindow:true,
             }).showToast();
         })
     })
 }
 
-//Función agregar al carrito: 
+// CARRITO 
 
 const agregarAlCarrito = (id) => {
     const producto = productos.find((producto) => producto.id === id);
@@ -65,9 +63,6 @@ const agregarAlCarrito = (id) => {
     }
     calcularTotal();
 }
-// mostrarProductos();
-
-//MOSTRAR EL CARRITO DE COMPRAS: 
 
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 const verCarrito = document.getElementById("verCarrito");
@@ -85,17 +80,16 @@ const mostrarCarrito = () => {
         card.classList.add("mt-2")
         card.innerHTML = `
         <img class="imagenCarrito" src="${producto.img}" alt="camiseta ${producto.nombre}">
-                <div class="producto__carrito text-center">
-                    <p class="parrafoCarrito"> Remera ${producto.nombre} </p>
-                    <p class="parrafoCarrito"> x ${producto.cantidad} u.</p>
-                    <p class="parrafoCarrito"> $ ${producto.precio} </p>
-                    
-                </div>
-                <button class="submit__carrito" id= "eliminar${producto.id}" > Eliminar del carrito </button>
-        `
+            <div class="producto__carrito text-center">
+                <p class="parrafoCarrito"> Remera ${producto.nombre} </p>
+                <p class="parrafoCarrito"> x ${producto.cantidad} u.</p>
+                <p class="parrafoCarrito"> $ ${producto.precio} </p>        
+            </div>
+            <button class="submit__carrito" id= "eliminar${producto.id}" > Eliminar del carrito </button>`
+
         contenedorCarrito.appendChild(card);
 
-        //Eliminar productos del carrito: 
+//Eliminar productos del carrito: 
         const boton = document.getElementById(`eliminar${producto.id}`);
         boton.addEventListener("click", () => {
             eliminarDelCarrito(producto.id);
@@ -108,11 +102,20 @@ const mostrarCarrito = () => {
                     background:"red"
                 },
                 newWindow:true,
-                }).showToast();
+            }).showToast();
         })
     })
-    
     calcularTotal();
+}
+
+const total = document.getElementById("total");
+
+const calcularTotal = () => {
+    let totalCompra = 0; 
+    carrito.forEach((producto) => {
+        totalCompra = totalCompra + producto.precio * producto.cantidad;
+    })
+    total.innerHTML = ` $${totalCompra}`;
 }
 
 
@@ -142,16 +145,4 @@ const eliminarTodoElCarrito = () => {
     mostrarCarrito();
 
     localStorage.clear();
-}
-
-//calculo del total
-
-const total = document.getElementById("total");
-
-const calcularTotal = () => {
-    let totalCompra = 0; 
-    carrito.forEach((producto) => {
-        totalCompra = totalCompra + producto.precio * producto.cantidad;
-    })
-    total.innerHTML = ` $${totalCompra}`;
 }

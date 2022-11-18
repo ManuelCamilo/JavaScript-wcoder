@@ -65,15 +65,12 @@ const agregarAlCarrito = (id) => {
     }
     calcularTotal();
 }
-
-mostrarProductos();
+// mostrarProductos();
 
 //MOSTRAR EL CARRITO DE COMPRAS: 
 
 const contenedorCarrito = document.getElementById("contenedorCarrito");
-
 const verCarrito = document.getElementById("verCarrito");
-
 verCarrito.addEventListener("click", () => {
     mostrarCarrito();
 });
@@ -85,6 +82,7 @@ const mostrarCarrito = () => {
     carrito.forEach((producto) => {
         const card = document.createElement("div");
         card.classList.add("cardCarrito");
+        card.classList.add("mt-2")
         card.innerHTML = `
         <img class="imagenCarrito" src="${producto.img}" alt="camiseta ${producto.nombre}">
                 <div class="producto__carrito text-center">
@@ -113,6 +111,7 @@ const mostrarCarrito = () => {
                 }).showToast();
         })
     })
+    
     calcularTotal();
 }
 

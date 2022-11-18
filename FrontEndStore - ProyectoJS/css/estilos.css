@@ -178,8 +178,32 @@ right: 17rem;
     margin-left: 11.5rem;
     border-radius: 5px;
 }
+.botonVaciarCarroResumen{
+    width: 25rem;
+    height: 7rem;
+    margin-top: 2rem;
+    margin-left: 8rem;
+}
 .carritoContenedor{
     margin-top: 2rem;
+}
+.tusProductos{
+width: 6rem;
+height: 5.4rem;
+margin-left: 55rem;
+}
+.compraResumen{
+    display: flex;
+}
+
+.total{
+    background-color: var(--primarioOscuro);
+    height: 20rem;
+    width: 60rem;
+    border-radius: 3.5rem;
+    margin-left: 29rem;
+    margin-top: 2rem;
+    
 }
 /***** APOYOS IMG *******/
 

@@ -78,9 +78,6 @@ h3{
     font-size: 2.2rem;
 }
 
-
-
-
 /*** Navegacion ***/
 
 .navegacion{
@@ -202,7 +199,7 @@ margin-left: 56rem;
     width: 60rem;
     border-radius: 3.5rem;
     margin-left: 29rem;
-    margin-top: 2rem;
+    margin-top: 7rem;
     display:grid;
     grid-template-rows: repeat(3,1fr);
 }
@@ -223,10 +220,14 @@ margin-left: 56rem;
     margin-right: 4rem;
 }
 .botonPagarCarro{
-    width: 10rem;
-    height: 4rem;
-    margin-top: 1rem;
-    margin-right: 4rem;
+    width: 15rem;
+    height: 5rem;
+    margin-left: 10rem;
+}
+.botonIrAlPago{
+    height: 5rem;
+    width: 15rem;
+    margin-right: 7rem;
 }
 /***** APOYOS IMG *******/
 
@@ -314,14 +315,7 @@ margin-left: 56rem;
     gap: 2rem;
 
 }
-.formulario__campo{
-    border: 1rem solid var(--primarioOscuro);
-    background-color: var(--primario);
-    color: var(--blanco);    
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1rem;
-}
+
 .formulario__submit{
     background-color: var(--secundario);
     border: none;

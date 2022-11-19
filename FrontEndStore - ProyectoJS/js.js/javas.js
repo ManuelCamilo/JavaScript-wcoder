@@ -1,22 +1,21 @@
 let productos = []
 let carrito = []
 
+// Traer productos json
 fetch(`json/productos.json`)
     .then (respuesta => respuesta.json())
     .then ((datos) => {
-        
         datos.forEach((producto)=> {
-        productos.push(producto)
-               
+        productos.push(producto)      
         })
         mostrarProductos()
     })
-
 if(localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
 }
 
 
+// Mostramos productos en nuestro index.html
 const contenedorProductos = document.getElementById("contenedorProductos");
 
 const mostrarProductos = () => {
@@ -37,7 +36,7 @@ const mostrarProductos = () => {
             agregarAlCarrito(producto.id);
             Toastify({
                 text:"Producto agregado al carrito",
-                duration:1500,
+                duration:2500,
                 gravity:"bottom",
                 position:"right",
                 style:{
@@ -50,7 +49,7 @@ const mostrarProductos = () => {
     })
 }
 
-// CARRITO 
+// Agregamos al carrito
 
 const agregarAlCarrito = (id) => {
     const producto = productos.find((producto) => producto.id === id);
@@ -63,6 +62,8 @@ const agregarAlCarrito = (id) => {
     }
     calcularTotal();
 }
+
+//ver carrito
 
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 const verCarrito = document.getElementById("verCarrito");
@@ -89,18 +90,19 @@ const mostrarCarrito = () => {
 
         contenedorCarrito.appendChild(card);
 
-//Eliminar productos del carrito: 
+//Eliminamos productos del carrito: 
         const boton = document.getElementById(`eliminar${producto.id}`);
         boton.addEventListener("click", () => {
             eliminarDelCarrito(producto.id);
             Toastify({
                 text:"Producto eliminado del carrito",
-                duration:1500,
+                duration:2500,
                 gravity:"bottom",
                 position:"right",
                 style:{
                     background:"red"
                 },
+                destination: "./carrito.html",
                 newWindow:true,
             }).showToast();
         })
@@ -137,12 +139,55 @@ const vaciarCarrito = document.getElementById("vaciarCarrito");
 vaciarCarrito.addEventListener("click", () => {
     eliminarTodoElCarrito();
 })
-
-//boton eliminar carrito
-
 const eliminarTodoElCarrito = () => {
     carrito = [];
     mostrarCarrito();
-
     localStorage.clear();
 }
+//boton eliminar carrito
+
+
+
+const botoncito = document.getElementById("botoncito");
+
+botoncito.addEventListener ("click", () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: "último Paso!",
+        text: "Si continúa, su compra se realizará con éxito!, de lo contrario limpiaremos el carrito y deberá volver a empezar",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Pagar',
+        cancelButtonText: 'Cancelar ',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Pagar',
+            'Gracias por comprar con nosotros!',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) 
+        {
+          swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'Tu carrito se encuentra vacio!',
+            'error'
+          )
+          carrito = [];
+          mostrarCarrito();
+          localStorage.clear();
+          
+        }
+      })
+});  
